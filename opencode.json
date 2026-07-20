@@ -1,15 +1,10 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "groq/llama-3.3-70b-versatile",
+  "model": "nvidia/llama-3.3-nemotron-super-49b-v1",
   "provider": {
-    "groq": {
+    "nvidia": {
       "options": {
-        "apiKey": "{env:GROQ_API_KEY}"
-      },
-      "models": {
-        "llama-3.3-70b-versatile": {
-          "name": "Llama 3.3 70B (Groq)"
-        }
+        "apiKey": "{env:NVIDIA_API_KEY}"
       }
     }
   }
