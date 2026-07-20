@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest              # la machine louee par GitHub (Linux)
     steps:
       - name: Recuperer le code
-        uses: actions/checkout@v4       # il clone le repo sur sa machine
+        uses: actions/checkout@v5       # il clone le repo sur sa machine
 
       - name: Installer Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
