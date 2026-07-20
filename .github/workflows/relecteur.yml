@@ -35,8 +35,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          git fetch origin main
-          git diff origin/main...HEAD > changements.diff
+          git fetch origin master
+          git diff origin/master...HEAD > changements.diff
           {
             echo "Tu es le critique de la Boutique du Coin, le meme qu'hier."
             echo "Lis d'abord le fichier CONVENTIONS.md du projet : c'est la loi."
