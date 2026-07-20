@@ -3,7 +3,7 @@
 #  Fiche de poste : sur chaque PR, lire les changements, les juger
 #  selon CONVENTIONS.md, et poster le verdict en commentaire.
 #  Il ne peut RIEN modifier : lecture seule + droit de commenter.
-#  Prerequis : la cle GEMINI_API_KEY dans Settings > Secrets.
+#  Prerequis : la cle GROQ_API_KEY dans Settings > Secrets.
 #  A placer dans le repo : .github/workflows/relecteur.yml
 # ================================================================
 
@@ -32,8 +32,7 @@ jobs:
 
       - name: Relire les changements et rendre le verdict
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: |
           git fetch origin master
           git diff origin/master...HEAD > changements.diff
@@ -50,7 +49,7 @@ jobs:
           } > mission.txt
           $HOME/.opencode/bin/opencode run "$(cat mission.txt)" > verdict.md || true
           if [ ! -s verdict.md ]; then
-            echo "Le relecteur n'a pas pu rendre son verdict. Verifier la cle GEMINI_API_KEY dans Settings > Secrets and variables > Actions." > verdict.md
+            echo "Le relecteur n'a pas pu rendre son verdict. Verifier la cle GROQ_API_KEY dans Settings > Secrets and variables > Actions." > verdict.md
           fi
 
       - name: Poster le verdict en commentaire de la PR
