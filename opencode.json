@@ -1,14 +1,14 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "groq/llama-3.1-8b-instant",
+  "model": "google/gemini-flash-latest",
   "provider": {
-    "groq": {
+    "google": {
       "options": {
-        "apiKey": "{env:GROQ_API_KEY}"
+        "apiKey": "{env:GEMINI_API_KEY}"
       },
       "models": {
-        "llama-3.1-8b-instant": {
-          "name": "Llama 3.1 8B (Groq)"
+        "gemini-flash-latest": {
+          "name": "Gemini Flash (formation)"
         }
       }
     }
